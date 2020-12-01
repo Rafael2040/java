@@ -47,7 +47,7 @@ public class JFCadastrarFilme extends JFrame {
 	 */
 	public JFCadastrarFilme() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 448, 416);
+		setBounds(100, 100, 448, 380);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -98,32 +98,16 @@ public class JFCadastrarFilme extends JFrame {
 		spTempo.setBounds(5, 280, 29, 20);
 		contentPane.add(spTempo);
 		
-		JLabel lblNewLabel_5 = new JLabel("Imagem");
-		lblNewLabel_5.setBounds(93, 266, 46, 14);
-		contentPane.add(lblNewLabel_5);
-		
-		JRadioButton rdbtnNewRadioButton3D = new JRadioButton("3D");
-		rdbtnNewRadioButton3D.setBounds(85, 279, 109, 23);
-		contentPane.add(rdbtnNewRadioButton3D);
-		
-		JRadioButton rdbtnNewRadioButton2D = new JRadioButton("2D");
-		rdbtnNewRadioButton2D.setBounds(85, 306, 109, 23);
-		contentPane.add(rdbtnNewRadioButton2D);
-		
-		ButtonGroup imagem = new ButtonGroup();
-		imagem.add(rdbtnNewRadioButton3D);
-		imagem.add(rdbtnNewRadioButton2D);
-		
 		JLabel lblNewLabel_6 = new JLabel("Audio");
-		lblNewLabel_6.setBounds(255, 266, 46, 14);
+		lblNewLabel_6.setBounds(69, 266, 46, 14);
 		contentPane.add(lblNewLabel_6);
 		
 		JRadioButton rdbtnNewRadioButtonDublado = new JRadioButton("Dublado");
-		rdbtnNewRadioButtonDublado.setBounds(248, 279, 109, 23);
+		rdbtnNewRadioButtonDublado.setBounds(133, 260, 109, 23);
 		contentPane.add(rdbtnNewRadioButtonDublado);
 		
 		JRadioButton rdbtnNewRadioButtonLegendado = new JRadioButton("Legendado");
-		rdbtnNewRadioButtonLegendado.setBounds(248, 306, 109, 23);
+		rdbtnNewRadioButtonLegendado.setBounds(248, 260, 109, 23);
 		contentPane.add(rdbtnNewRadioButtonLegendado);
 		
 		ButtonGroup audio = new ButtonGroup();
@@ -139,11 +123,6 @@ public class JFCadastrarFilme extends JFrame {
 				f.setSinopse(txtSinopse.getText());
 				f.setCategoria(txtCategoria.getText());
 				f.setTempo(Integer.parseInt(spTempo.getValue().toString()));
-				if(rdbtnNewRadioButton2D.isSelected()) {
-					f.setImagem3d(false);
-				}else if(rdbtnNewRadioButton3D.isSelected()) {
-					f.setImagem3d(true);
-				}
 				
 				if(rdbtnNewRadioButtonDublado.isSelected()) {
 					f.setDublado(true);
@@ -153,15 +132,15 @@ public class JFCadastrarFilme extends JFrame {
 				dao.create(f);
 			}
 		});	
-		btnNewButtonCadastrar.setBounds(5, 343, 89, 23);
+		btnNewButtonCadastrar.setBounds(5, 311, 89, 23);
 		contentPane.add(btnNewButtonCadastrar);
 		
 		JButton btnNewButtonLimpar = new JButton("Limpar");
-		btnNewButtonLimpar.setBounds(174, 343, 89, 23);
+		btnNewButtonLimpar.setBounds(171, 311, 89, 23);
 		contentPane.add(btnNewButtonLimpar);
 		
 		JButton btnNewButtonCancelar = new JButton("Cancelar");
-		btnNewButtonCancelar.setBounds(333, 343, 89, 23);
+		btnNewButtonCancelar.setBounds(333, 311, 89, 23);
 		contentPane.add(btnNewButtonCancelar);
 	}
 }	
